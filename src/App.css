@@ -4,8 +4,39 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background-color: rgb(99, 56, 32);
 }
 
-.App h1 {
+.App_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  height: 475px;
+  background-color: rgb(10, 172, 247);
+  border: 10px solid rgb(75, 36, 16);
+  border-radius: 10px 10px 0 0;
+}
+
+.App_title {
   text-align: center;
+  margin-top: 20px;
+  color: #fff;
+  font-family: 'Ranchers', cursive;
+  font-size: 40px;
+  text-transform: uppercase;
+  text-shadow: 4px 4px 2px rgb(18, 126, 177);
+}
+
+.App_logo {
+  position: relative;
+  top: 75px;
+  width: 250px;
+}
+
+.grass {
+  position: relative;
+  bottom: 62px;
+  width: 101%;
+  height: 150px;
 }
