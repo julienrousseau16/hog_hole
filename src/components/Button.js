@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom'
 
 import './Button.css'
 
-const Button = ({url, lang}) => {
+const Button = ({ text, url }) => {
   return (
     <Link to={url}>
-        <button className='Button'>
-            {lang === 'fr' ? 'Commencer' : 'Start'}
-        </button>
+      <button className='Button'>
+        {text}
+      </button>
     </Link>
   )
 }

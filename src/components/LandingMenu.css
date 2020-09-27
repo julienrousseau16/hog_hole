@@ -1,0 +1,8 @@
+.LandingMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: chocolate;
+  border: 5px solid rgb(129, 68, 24);
+}
