@@ -8,6 +8,11 @@
 }
 
 .flag {
-  width: 50px;
+  width: 40px;
   margin-left: 10px;
+}
+.noflag {
+  width: 40px;
+  margin-left: 10px;
+  filter: grayscale(100%);
 }

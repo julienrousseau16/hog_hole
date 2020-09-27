@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import FrontPage from './components/FrontPage'
 import LandingMenu from './components/LandingMenu'
 import LanguageSelector from './components/LanguageSelector'
+import Rules from './components/Rules'
 
 import './App.css'
 
@@ -14,13 +15,16 @@ const App = () => {
   return (
     <Router>
       <div className="App">
-        <LanguageSelector setLang={setLang}/>
+        <LanguageSelector lang={lang} setLang={setLang}/>
         <Switch>
           <Route exact path='/'>
             <FrontPage lang={lang} />
           </Route>
           <Route path='/menu'>
             <LandingMenu lang={lang} />
+          </Route>
+          <Route path='/rules'>
+            <Rules lang={lang} />
           </Route>
         </Switch>
       </div>

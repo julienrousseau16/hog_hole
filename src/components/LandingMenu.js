@@ -14,17 +14,18 @@ const LandingMenu = ({ lang }) => {
       </p>
       <h1>
         {lang === 'fr' ?
-          'Trou du Cochon'
-          : 'The Hog\'s Hole'}
+          'Trou du Cochon !'
+          : 'The Hog\'s Hole !'}
       </h1>
 
-      <Button 
-      text={lang === 'fr' ? 'Voir les règles' : 'How to Play'}
-      url='/rules' />
-      <Button 
-      text={lang === 'fr' ? 'Faire une partie' : 'Start a game'}
-      url='/gamesession' />
-      
+      <div className='LandingMenu_container'>
+        <Button
+          text={lang === 'fr' ? 'Règles du Jeu' : 'How to Play'}
+          url='/rules' />
+        <Button
+          text={lang === 'fr' ? 'Faire une partie' : 'Start a game'}
+          url='/gamesession' />
+      </div>
     </div>
   )
 }

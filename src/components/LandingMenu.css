@@ -3,6 +3,31 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: chocolate;
-  border: 5px solid rgb(129, 68, 24);
+  padding: 5%;
+}
+
+.LandingMenu p {
+  text-align: center;
+  color: #fff;
+  font-size: 25px;
+  text-shadow: 3px 3px 3px rgb(43, 28, 2);
+}
+
+.LandingMenu h1 {
+  margin-bottom: 50px;
+  color: #fff;
+  font-family: 'Ranchers', 'cursive';
+  font-size: 50px;
+  text-shadow: 3px 3px 3px rgb(43, 28, 2);
+}
+
+.LandingMenu_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.LandingMenu_container button {
+  margin-bottom: 20px;
 }
