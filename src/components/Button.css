@@ -37,6 +37,15 @@
   border: 5px solid rgb(66, 35, 40);
 }
 
+#blue {
+  background-color: rgb(62, 152, 212);
+  border: 5px solid rgb(40, 100, 139);
+}
+#blue:hover {
+  background-color: rgb(40, 108, 153);
+  border: 5px solid rgb(23, 62, 88);
+}
+
 #default {
   background-color: rgb(187, 136, 42);
   border: 5px solid rgb(126, 87, 14);

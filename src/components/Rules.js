@@ -42,6 +42,7 @@ const Rules = ({ lang }) => {
       </p>
 
       <Button
+        type='nav'
         text={lang === 'fr' ? 'J\'ai compris !' : 'Got it !'}
         color='pink'
         url='/menu' />

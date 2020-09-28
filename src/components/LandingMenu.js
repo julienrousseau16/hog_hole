@@ -20,11 +20,13 @@ const LandingMenu = ({ lang }) => {
 
       <div className='LandingMenu_container'>
         <Button
+          type='nav'
           text={lang === 'fr' ? 'Règles du Jeu' : 'How to Play'}
           url='/rules' />
         <Button
+          type='nav'
           text={lang === 'fr' ? 'Faire une partie' : 'Start a game'}
-          url='/gamesession' />
+          url='/settings' />
       </div>
     </div>
   )

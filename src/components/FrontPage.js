@@ -14,7 +14,9 @@ const FrontPage = ({ lang }) => {
         <img className='FrontPage_logo' src={require('../pictures/hogingrass.png')} alt='hog-logo' />
       </div>
       <Button
+        type='nav'
         text={lang === 'fr' ? 'Commencer' : 'Start'}
+        color='blue'
         url='/menu' />
     </div>
   )

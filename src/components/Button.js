@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import './Button.css'
 
-const Button = ({ text, color, url }) => {
+const Button = ({ onClick, type, text, color, url }) => {
 
   const colorSelector = arg => {
     switch (arg) {
@@ -13,20 +13,33 @@ const Button = ({ text, color, url }) => {
         return 'cancel'
       case 'pink':
         return 'pink'
+      case 'blue':
+        return 'blue'
       default:
         return 'default'
     }
   }
-
-  return (
-    <Link to={url}>
+  if (type === 'nav') {
+    return (
+      <Link to={url}>
+        <button
+          onClick={onClick}
+          id={colorSelector(color)}
+          className='Button'>
+          {text}
+        </button>
+      </Link>
+    )
+  } else {
+    return (
       <button
+        onClick={onClick}
         id={colorSelector(color)}
         className='Button'>
         {text}
       </button>
-    </Link>
-  )
+    )
+  }
 }
 
 export default Button
