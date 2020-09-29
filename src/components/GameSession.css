@@ -32,23 +32,42 @@
   width: 100%;
   margin-top: 30px;
 }
-.each_player {
+
+/*MUTUAL STYLE FOR PLAYERS */
+.waitingPlayer, .currentPlayer {
   display: flex;
   align-items: center;
+  padding: 10px 0;
   list-style: none;
 }
-.each_player h3 {
+.waitingPlayer h3, .currentPlayer h3 {
   font-family: 'Rabbids';
   font-size: 30px;
   letter-spacing: 1px;
-  color: #fff;
 }
-.each_player img {
+.waitingPlayer img, .currentPlayer img {
   width: 10%;
   margin: 0 3px 0 15px;
 }
-.each_player p {
+.waitingPlayer p, .currentPlayer p {
   font-family: 'Rabbids';
   font-size: 30px;
+}
+
+/*CURRENT PLAYER */
+.currentPlayer {
+  justify-content: center;
+  background-color: rgb(151, 97, 16);
+}
+.currentPlayer h3, .currentPlayer p {
+  color: rgb(90, 57, 7);
+}
+
+
+/* WAITING PLAYER */
+.waitingPlayer h3 {
+  color: #fff;
+}
+.waitingPlayer p {
   color:rgb(151, 97, 16);
 }
