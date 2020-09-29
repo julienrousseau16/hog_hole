@@ -18,7 +18,7 @@ const Settings = ({ lang }) => {
 
       <h1>
         {lang === 'fr' ?
-          'Avant de commencer... !'
+          'Avant de commencer...'
           : 'Before you start...'}
       </h1>
 

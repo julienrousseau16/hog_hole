@@ -9,9 +9,9 @@ const FrontPage = ({ lang }) => {
     <div className='FrontPage'>
       <div className='FrontPage_container'>
         <h1 className='FrontPage_title'>
-          {lang === 'fr' ? 'Le Trou du Cochon' : "The Hog's Hole"}
+          {lang === 'fr' ? 'Le Trou du Lapin' : "The Rabbid's Hole"}
         </h1>
-        <img className='FrontPage_logo' src={require('../pictures/hogingrass.png')} alt='hog-logo' />
+        <img className='FrontPage_logo' src={require('../pictures/intro_rabbid.png')} alt='hog-logo' />
       </div>
       <Button
         type='nav'

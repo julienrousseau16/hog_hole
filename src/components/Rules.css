@@ -3,7 +3,6 @@
   flex-direction: column;
   align-items: center;
   width: 90%;
-  margin: 80px;
   padding: 5%;
   background-color: rgb(209, 107, 124);
   border: 10px solid rgb(230, 171, 182);
@@ -15,15 +14,16 @@
   align-items: center;
 }
 .Rules_title_container img {
-  width: 60px;
-  margin-right: 10px;
+  align-self: flex-start;
+  width: 50px;
 }
 
 .Rules h1 {
   margin: 20px 0;
   color: rgb(66, 35, 40);
   text-transform: uppercase;
-  font-family: 'Ranchers', cursive;
+  letter-spacing: 2px;
+  font-family: 'Rabbids', cursive;
 }
 
 .Rules p {

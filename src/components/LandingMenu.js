@@ -14,8 +14,8 @@ const LandingMenu = ({ lang }) => {
       </p>
       <h1>
         {lang === 'fr' ?
-          'Trou du Cochon !'
-          : 'The Hog\'s Hole !'}
+          'Trou du Lapin !'
+          : 'The Rabbid\'s Hole !'}
       </h1>
 
       <div className='LandingMenu_container'>

@@ -8,3 +8,8 @@
 button {
   cursor: pointer;
 }
+
+@font-face {
+  font-family : 'Rabbids';
+  src : url('./fonts/Rabbids.ttf')
+}

@@ -9,15 +9,16 @@
 .LandingMenu p {
   text-align: center;
   color: #fff;
-  font-size: 25px;
+  font-size: 20px;
   text-shadow: 3px 3px 3px rgb(43, 28, 2);
 }
 
 .LandingMenu h1 {
   margin-bottom: 50px;
   color: #fff;
-  font-family: 'Ranchers', 'cursive';
-  font-size: 50px;
+  font-family: 'Rabbids', 'cursive';
+  font-size: 40px;
+  letter-spacing: 2px;
   text-shadow: 3px 3px 3px rgb(43, 28, 2);
 }
 

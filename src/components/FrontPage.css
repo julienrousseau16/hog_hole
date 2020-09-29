@@ -10,7 +10,7 @@
   justify-content: flex-end;
   align-items: center;
   width: 300px;
-  height: 420px;
+  height: 500px;
   margin-bottom: 20px;
   background-color: rgb(10, 172, 247);
   border: 10px solid rgb(54, 25, 11);
@@ -22,13 +22,13 @@
   justify-self: flex-start;
   text-align: center;
   color: #fff;
-  font-family: 'Ranchers', cursive;
+  font-family: 'Rabbids', cursive;
   font-size: 40px;
   text-transform: uppercase;
+  letter-spacing: 2px;
   text-shadow: 4px 4px 2px rgb(18, 126, 177);
 }
   
 .FrontPage_logo {
-  margin-top: 20px;
-  width: 100%;
+  width: 101%;
 }

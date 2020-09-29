@@ -9,7 +9,7 @@ const Rules = ({ lang }) => {
     <div className='Rules'>
 
       <div className='Rules_title_container'>
-        <img src={require('../pictures/hoghead.png')} alt='hog head'/>
+        <img src={require('../pictures/rabbid_head.png')} alt='hog head'/>
         <h1>
           {lang === 'fr' ?
             'Règles du Jeu'

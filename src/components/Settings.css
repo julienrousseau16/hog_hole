@@ -14,7 +14,8 @@
   margin: 20px 0;
   color: rgb(255, 255, 255);
   text-transform: uppercase;
-  font-family: 'Ranchers', cursive;
+  letter-spacing: 2px;
+  font-family: 'Rabbids', cursive;
 }
 
 .playersNumber {
@@ -40,7 +41,7 @@
   width: 55px;
   font-size: 30px;
   padding-left: 10px;
-  font-family: 'Ranchers', cursive;
+  font-family: 'Rabbids', cursive;
   background-color:rgb(40, 100, 139);
   color: #fff;;
   border: none;
@@ -50,7 +51,7 @@
 
 .Settings option {
   width: 30px;
-  font-family: 'Ranchers', cursive;
+  font-family: 'Rabbids', cursive;
   font-size: 30px;
   background-color: rgb(122, 179, 218);
 }
@@ -76,7 +77,7 @@
   border: none;
   border-radius: 5px;
   box-shadow: 0px 2px 2px 1px rgb(52, 81, 99);
-  font-family: 'Ranchers', 'cursive';
+  font-family: 'Rabbids', 'cursive';
   font-size: 20px;
   color: #fff;
 }
