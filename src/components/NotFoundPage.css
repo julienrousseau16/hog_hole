@@ -1,0 +1,31 @@
+.NotFoundPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  padding: 5%;
+  background-color: rgb(49, 48, 48);
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  border: 5px solid rgb(207, 167, 34);
+  border-radius: 10px;
+}
+
+.NotFoundPage h1 {
+  text-align: center;
+  margin: 10px 0;
+  color: rgb(209, 101, 29);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: 'Rabbids', cursive;
+}
+
+.NotFoundPage img {
+  width: 70%;
+}
+
+.NotFoundPage p {
+  margin-top: 20px;
+  color: #fff;
+  font-family: 'Rabbids', 'cursive';
+  font-size: 22px;
+}

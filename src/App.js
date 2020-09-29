@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import FrontPage from './components/FrontPage'
 import LandingMenu from './components/LandingMenu'
 import LanguageSelector from './components/LanguageSelector'
+import NotFoundPage from './components/NotFoundPage'
 import Rules from './components/Rules'
 import Settings from './components/Settings'
 
@@ -29,6 +30,9 @@ const App = () => {
           </Route>
           <Route path='/settings'>
             <Settings lang={lang} />
+          </Route>
+          <Route path="*">
+            <NotFoundPage lang={lang} />
           </Route>
         </Switch>
       </div>

@@ -8,10 +8,10 @@ const Settings = ({ lang }) => {
 
   const [playersNumber, setPlayersNumber] = useState(2)
   const [showInputs, setShowInputs] = useState(false)
-  const [player1, setPlayer1] = useState('Porco Rosso')
-  const [player2, setPlayer2] = useState('Babe')
-  const [player3, setPlayer3] = useState('Porcinet')
-  const [player4, setPlayer4] = useState('Herta')
+  const [player1, setPlayer1] = useState('Bugs Buddy')
+  const [player2, setPlayer2] = useState('Rabbid Jacob')
+  const [player3, setPlayer3] = useState('Ink\' Rabbidle')
+  const [player4, setPlayer4] = useState('Abu Rabbid')
 
   return (
     <div className='Settings'>
