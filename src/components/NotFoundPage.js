@@ -10,7 +10,7 @@ const NotFoundPage = ({lang}) => {
             '/!\\ Erreur 404 /!\\'
             : '/!\\ 404 Error /!\\'}
         </h1>
-        <img src={require('../pictures/404.png')} alt='rabbid picture' />
+        <img src={require('../pictures/404.png')} alt='rabbid' />
         <p>
           {lang === 'fr' ?
             'Oups...Cette page n\'existe pas !'

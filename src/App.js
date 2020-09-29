@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import FrontPage from './components/FrontPage'
+import GameSession from './components/GameSession'
 import LandingMenu from './components/LandingMenu'
 import LanguageSelector from './components/LanguageSelector'
 import NotFoundPage from './components/NotFoundPage'
@@ -30,6 +31,9 @@ const App = () => {
           </Route>
           <Route path='/settings'>
             <Settings lang={lang} />
+          </Route>
+          <Route path='/gamesession'>
+            <GameSession lang={lang} />
           </Route>
           <Route path="*">
             <NotFoundPage lang={lang} />
