@@ -1,0 +1,172 @@
+.DiceWindow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+.DiceWindowContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  background-color: #fff;
+}
+
+.DiceWindow img {
+  width: 100%;
+}
+
+/* Dice animation */
+@keyframes spin {
+  0% { transform: translateZ(-100px) rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+  16% { transform: translateZ(-100px) rotateX(180deg) rotateY(180deg) rotateZ(0deg); }
+  33% { transform: translateZ(-100px) rotateX(360deg) rotateY(90deg) rotateZ(180deg); }
+  50% { transform: translateZ(-100px) rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
+  66% { transform: translateZ(-100px) rotateX(180deg) rotateY(360deg) rotateZ(270deg); }
+  83% { transform: translateZ(-100px) rotateX(270deg) rotateY(180deg) rotateZ(180deg); }
+  100% { transform: translateZ(-100px) rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
+}
+@keyframes spin-duplicate {
+  0% { transform: translateZ(-100px) rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+  16% { transform: translateZ(-100px) rotateX(180deg) rotateY(180deg) rotateZ(0deg); }
+  33% { transform: translateZ(-100px) rotateX(360deg) rotateY(90deg) rotateZ(180deg); }
+  50% { transform: translateZ(-100px) rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
+  66% { transform: translateZ(-100px) rotateX(180deg) rotateY(360deg) rotateZ(270deg); }
+  83% { transform: translateZ(-100px) rotateX(270deg) rotateY(180deg) rotateZ(180deg); }
+  100% { transform: translateZ(-100px) rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
+}
+@keyframes roll {
+  0% { transform: translate3d(-200px,-50px,-400px) }
+  12% { transform: translate3d(0px,0,-100px) }
+  25% { transform: translate3d(200px,-50px,-400px) }
+  37% { transform: translate3d(0px,-100px,-800px) }
+  50% { transform: translate3d(-200px,-50px,-400px) }
+  62% { transform: translate3d(0px,0,-100px) }
+  75% { transform: translate3d(200px,-50px,-400px) }
+  87% { transform: translate3d(0px,-100px,-800px) }
+  100% { transform: translate3d(-200px,-50px,-400px) }
+}
+
+#wrapper {
+  position: relative;
+  width: 200px;
+  padding-top: 100px;
+  margin: 0 auto;
+  perspective: 1200px;
+}
+#platform {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+#dice {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  animation: spin 2s infinite linear;
+}
+.side {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: #fff;
+  box-shadow:inset 0 0 40px #ccc;
+  border-radius: 40px;
+}
+#dice .cover, #dice .inner {
+  background: #e0e0e0;
+  box-shadow: none;
+}
+#dice .cover {
+  border-radius: 0;
+  transform: translateZ(0px);
+}
+#dice .cover.x {
+  transform: rotateY(90deg);
+}
+#dice .cover.z {
+  transform: rotateX(90deg);
+}
+#dice .front  {
+  transform: translateZ(100px);
+}
+#dice .front.inner  {
+  transform: translateZ(98px);
+}
+#dice .back {
+  transform: rotateX(-180deg) translateZ(100px);
+}
+#dice .back.inner {
+  transform: rotateX(-180deg) translateZ(98px);
+}
+#dice .right {
+  transform: rotateY(90deg) translateZ(100px);
+}
+#dice .right.inner {
+  transform: rotateY(90deg) translateZ(98px);
+}
+#dice .left {
+  transform: rotateY(-90deg) translateZ(100px);
+}
+#dice .left.inner {
+  transform: rotateY(-90deg) translateZ(98px);
+}
+#dice .top {
+  transform: rotateX(90deg) translateZ(100px);
+}
+#dice .top.inner {
+  transform: rotateX(90deg) translateZ(98px);
+}
+#dice .bottom {
+  transform: rotateX(-90deg) translateZ(100px);
+}
+#dice .bottom.inner {
+  transform: rotateX(-90deg) translateZ(98px);
+}
+.dot {
+  position:absolute;
+  width:46px;
+  height:46px;
+  border-radius:23px;
+  background:#444;
+  box-shadow:inset 5px 0 10px #000;
+}
+.dot.center {
+  margin:77px 0 0 77px;
+}
+.dot.dtop {
+  margin-top:20px;
+}
+.dot.dleft {
+  margin-left:134px;
+}
+.dot.dright {
+  margin-left:20px;
+}
+.dot.dbottom {
+  margin-top:134px;
+}
+.dot.center.dleft {
+  margin:77px 0 0 20px;
+}
+.dot.center.dright {
+  margin:77px 0 0 134px;
+}
+
+
