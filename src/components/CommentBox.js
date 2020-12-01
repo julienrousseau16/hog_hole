@@ -7,14 +7,19 @@ const CommentBox = ({ lang, comment, dice, name, name2, p1Turn, setComWindow, se
   return (
     <div className='CommentBox'>
       <div className='CommentBoxContent'>
-        <h1>CommentBox</h1>
+        <h1>Verdict...</h1>
         <p>{
           lang === 'fr' ?
             `L'oeuf de ${name} a atterit dans le trou n° ${dice}`
             : `${name}'s egg landed in Hole n° ${dice}`
-        }</p>
-        <p>{comment}</p>
-        <div>
+        }...</p>
+        <img src={require(
+          dice === 6 ? '../pictures/bingonobg.png'
+            : comment.includes('Bien' || 'Well') ? '../pictures/smile.png'
+            : '../pictures/missed.png'
+        )} alt='result' />
+        <p id='Comment'>{comment}</p>
+        <div className='CommentBoxActions'>
           <Button
             color='validate'
             onClick={() => setComWindow(false)}
@@ -30,8 +35,8 @@ const CommentBox = ({ lang, comment, dice, name, name2, p1Turn, setComWindow, se
             }}
             text={
               lang === 'fr' ?
-                `Au tour de ${name2}`
-                : `${name2}'s turn`
+                `À ${name2} !`
+                : `${name2}'s turn !`
             }
           />
         </div>

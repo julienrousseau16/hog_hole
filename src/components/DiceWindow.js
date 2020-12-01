@@ -13,7 +13,10 @@ const DiceWindow = ({ lang, name }) => {
   return (
     <div className='DiceWindow'>
       <div className='DiceWindowContent'>
-        <img src={require('../pictures/rabbids-invasion-wallpaper-best-4k-wallpaper-rabbid-invasion-wallpaper-hd-115629678900thsrztun2.png')} />
+        <h1>
+          {lang === 'fr' ? 'Attention !' : 'Watch out !'}
+        </h1>
+        <img src={require('../pictures/thrower.png')} />
         <p>{name}
           {lang === 'fr' ?
             ' s\'apprête à tirer...'
@@ -21,48 +24,48 @@ const DiceWindow = ({ lang, name }) => {
         </p>
         {dice && <div id="platform">
           <div id="dice">
-            <div class="side front">
-              <div class="dot center"></div>
+            <div className="side front">
+              <div className="dot center"></div>
             </div>
-            <div class="side front inner"></div>
-            <div class="side top">
-              <div class="dot dtop dleft"></div>
-              <div class="dot dbottom dright"></div>
+            <div className="side front inner"></div>
+            <div className="side top">
+              <div className="dot dtop dleft"></div>
+              <div className="dot dbottom dright"></div>
             </div>
-            <div class="side top inner"></div>
-            <div class="side right">
-              <div class="dot dtop dleft"></div>
-              <div class="dot center"></div>
-              <div class="dot dbottom dright"></div>
+            <div className="side top inner"></div>
+            <div className="side right">
+              <div className="dot dtop dleft"></div>
+              <div className="dot center"></div>
+              <div className="dot dbottom dright"></div>
             </div>
-            <div class="side right inner"></div>
-            <div class="side left">
-              <div class="dot dtop dleft"></div>
-              <div class="dot dtop dright"></div>
-              <div class="dot dbottom dleft"></div>
-              <div class="dot dbottom dright"></div>
+            <div className="side right inner"></div>
+            <div className="side left">
+              <div className="dot dtop dleft"></div>
+              <div className="dot dtop dright"></div>
+              <div className="dot dbottom dleft"></div>
+              <div className="dot dbottom dright"></div>
             </div>
-            <div class="side left inner"></div>
-            <div class="side bottom">
-              <div class="dot center"></div>
-              <div class="dot dtop dleft"></div>
-              <div class="dot dtop dright"></div>
-              <div class="dot dbottom dleft"></div>
-              <div class="dot dbottom dright"></div>
+            <div className="side left inner"></div>
+            <div className="side bottom">
+              <div className="dot center"></div>
+              <div className="dot dtop dleft"></div>
+              <div className="dot dtop dright"></div>
+              <div className="dot dbottom dleft"></div>
+              <div className="dot dbottom dright"></div>
             </div>
-            <div class="side bottom inner"></div>
-            <div class="side back">
-              <div class="dot dtop dleft"></div>
-              <div class="dot dtop dright"></div>
-              <div class="dot dbottom dleft"></div>
-              <div class="dot dbottom dright"></div>
-              <div class="dot center dleft"></div>
-              <div class="dot center dright"></div>
+            <div className="side bottom inner"></div>
+            <div className="side back">
+              <div className="dot dtop dleft"></div>
+              <div className="dot dtop dright"></div>
+              <div className="dot dbottom dleft"></div>
+              <div className="dot dbottom dright"></div>
+              <div className="dot center dleft"></div>
+              <div className="dot center dright"></div>
             </div>
-            <div class="side back inner"></div>
-            <div class="side cover x"></div>
-            <div class="side cover y"></div>
-            <div class="side cover z"></div>
+            <div className="side back inner"></div>
+            <div className="side cover x"></div>
+            <div className="side cover y"></div>
+            <div className="side cover z"></div>
           </div>
         </div>}
       </div>

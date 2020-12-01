@@ -5,8 +5,8 @@
   top: 0;
   right: 0;
   padding: 10px;
+  z-index: 2;
 }
-
 .flag {
   width: 40px;
   margin-left: 10px;

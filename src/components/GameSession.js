@@ -23,10 +23,10 @@ const GameSession = ({ lang }) => {
   const [diceWindow, setDiceWindow] = useState(false)
   const [comWindow, setComWindow] = useState(false)
 
-  // const player1 = useLocation().players.player1
-  // const player2 = useLocation().players.player2
-  const player1 = 'joe'
-  const player2 = 'jack'
+  const player1 = useLocation().players.player1
+  const player2 = useLocation().players.player2
+  // const player1 = 'joe'
+  // const player2 = 'jack'
 
   const diceRoll = () => {
     const random = Math.floor(Math.random() * (7 - 1) + 1)
