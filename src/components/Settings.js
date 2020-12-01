@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import {Link} from 'react-router-dom'
 import Button from './Button'
 
 import './Settings.css'
@@ -98,7 +97,7 @@ const Settings = ({ lang }) => {
           }
           <Button
             type='nav'
-            url='/gamesession'
+            url={{pathname: '/gamesession', players: {player1, player2, player3, player4}}}
             text={lang === 'fr' ? 'C\'est parti !' : 'Here we go !'}
             color='validate' />
         </div>}
