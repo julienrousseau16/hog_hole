@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 
 import Button from './Button'
+import CommentBox from './CommentBox'
 import DiceWindow from './DiceWindow'
 
 import './GameSession.css'
@@ -19,7 +20,8 @@ const GameSession = ({ lang }) => {
   const [dice, setDice] = useState()
   const [comment, setComment] = useState('')
 
-  const [window, setWindow] = useState(false)
+  const [diceWindow, setDiceWindow] = useState(false)
+  const [comWindow, setComWindow] = useState(false)
 
   // const player1 = useLocation().players.player1
   // const player2 = useLocation().players.player2
@@ -28,11 +30,11 @@ const GameSession = ({ lang }) => {
 
   const diceRoll = () => {
     const random = Math.floor(Math.random() * (7 - 1) + 1)
-    setWindow(true)
-    setTimeout(() => setWindow(false), 4000);
+    setDiceWindow(true)
+    setTimeout(() => setDiceWindow(false), 4000);
     setDice(random)
     diceResult(random)
-    setP1Turn(!p1Turn)
+    setTimeout(() => setComWindow(true), 4050);
   }
 
   const diceResult = dice => {
@@ -41,12 +43,12 @@ const GameSession = ({ lang }) => {
         case 1:
           if (hole1 === 'empty') {
             lang === 'fr' ? setComment('Bien joué, ce trou est vide !')
-            : setComment('Well done, this hole is empty')
+              : setComment('Well done, this hole is empty')
             setHole1('full')
             setEggsP1(eggsP1 - 1)
           } else {
             lang === 'fr' ? setComment('Arf, ce trou est déjà occupé...')
-            : setComment('Ouch, this hole is already full...')
+              : setComment('Ouch, this hole is already full...')
             setHole1('empty')
             setEggsP1(eggsP1 + 1)
           }
@@ -54,12 +56,12 @@ const GameSession = ({ lang }) => {
         case 2:
           if (hole2 === 'empty') {
             lang === 'fr' ? setComment('Bien joué, ce trou est vide !')
-            : setComment('Well done, this hole is empty')
+              : setComment('Well done, this hole is empty')
             setHole2('full')
             setEggsP1(eggsP1 - 1)
           } else {
             lang === 'fr' ? setComment('Arf, ce trou est déjà occupé...')
-            : setComment('Ouch, this hole is already full...')
+              : setComment('Ouch, this hole is already full...')
             setHole2('empty')
             setEggsP1(eggsP1 + 1)
           }
@@ -67,12 +69,12 @@ const GameSession = ({ lang }) => {
         case 3:
           if (hole3 === 'empty') {
             lang === 'fr' ? setComment('Bien joué, ce trou est vide !')
-            : setComment('Well done, this hole is empty')
+              : setComment('Well done, this hole is empty')
             setHole3('full')
             setEggsP1(eggsP1 - 1)
           } else {
             lang === 'fr' ? setComment('Arf, ce trou est déjà occupé...')
-            : setComment('Ouch, this hole is already full...')
+              : setComment('Ouch, this hole is already full...')
             setHole3('empty')
             setEggsP1(eggsP1 + 1)
           }
@@ -80,12 +82,12 @@ const GameSession = ({ lang }) => {
         case 4:
           if (hole4 === 'empty') {
             lang === 'fr' ? setComment('Bien joué, ce trou est vide !')
-            : setComment('Well done, this hole is empty')
+              : setComment('Well done, this hole is empty')
             setHole4('full')
             setEggsP1(eggsP1 - 1)
           } else {
             lang === 'fr' ? setComment('Arf, ce trou est déjà occupé...')
-            : setComment('Ouch, this hole is already full...')
+              : setComment('Ouch, this hole is already full...')
             setHole4('empty')
             setEggsP1(eggsP1 + 1)
           }
@@ -93,19 +95,20 @@ const GameSession = ({ lang }) => {
         case 5:
           if (hole5 === 'empty') {
             lang === 'fr' ? setComment('Bien joué, ce trou est vide !')
-            : setComment('Well done, this hole is empty')
+              : setComment('Well done, this hole is empty')
             setHole5('full')
             setEggsP1(eggsP1 - 1)
           } else {
             lang === 'fr' ? setComment('Arf, ce trou est déjà occupé...')
-            : setComment('Ouch, this hole is already full...')
+              : setComment('Ouch, this hole is already full...')
             setHole5('empty')
             setEggsP1(eggsP1 + 1)
           }
           break;
         default:
           setEggsP1(eggsP1 - 1)
-          console.log('le trou du lapin')
+          lang === 'fr' ? setComment('Et BIM !! Dans l\'trou du Lapin !')
+            : setComment('BAM ! Right in the Rabbid\s Hole !')
           break;
       }
     } else {
@@ -113,12 +116,12 @@ const GameSession = ({ lang }) => {
         case 1:
           if (hole1 === 'empty') {
             lang === 'fr' ? setComment('Bien joué, ce trou est vide !')
-            : setComment('Well done, this hole is empty')
+              : setComment('Well done, this hole is empty')
             setHole1('full')
             setEggsP2(eggsP2 - 1)
           } else {
             lang === 'fr' ? setComment('Arf, ce trou est déjà occupé...')
-            : setComment('Ouch, this hole is already full...')
+              : setComment('Ouch, this hole is already full...')
             setHole1('empty')
             setEggsP2(eggsP2 + 1)
           }
@@ -126,12 +129,12 @@ const GameSession = ({ lang }) => {
         case 2:
           if (hole2 === 'empty') {
             lang === 'fr' ? setComment('Bien joué, ce trou est vide !')
-            : setComment('Well done, this hole is empty')
+              : setComment('Well done, this hole is empty')
             setHole2('full')
             setEggsP2(eggsP2 - 1)
           } else {
             lang === 'fr' ? setComment('Arf, ce trou est déjà occupé...')
-            : setComment('Ouch, this hole is already full...')
+              : setComment('Ouch, this hole is already full...')
             setHole2('empty')
             setEggsP2(eggsP2 + 1)
           }
@@ -139,12 +142,12 @@ const GameSession = ({ lang }) => {
         case 3:
           if (hole3 === 'empty') {
             lang === 'fr' ? setComment('Bien joué, ce trou est vide !')
-            : setComment('Well done, this hole is empty')
+              : setComment('Well done, this hole is empty')
             setHole3('full')
             setEggsP2(eggsP2 - 1)
           } else {
             lang === 'fr' ? setComment('Arf, ce trou est déjà occupé...')
-            : setComment('Ouch, this hole is already full...')
+              : setComment('Ouch, this hole is already full...')
             setHole3('empty')
             setEggsP2(eggsP2 + 1)
           }
@@ -152,12 +155,12 @@ const GameSession = ({ lang }) => {
         case 4:
           if (hole4 === 'empty') {
             lang === 'fr' ? setComment('Bien joué, ce trou est vide !')
-            : setComment('Well done, this hole is empty')
+              : setComment('Well done, this hole is empty')
             setHole4('full')
             setEggsP2(eggsP2 - 1)
           } else {
             lang === 'fr' ? setComment('Arf, ce trou est déjà occupé...')
-            : setComment('Ouch, this hole is already full...')
+              : setComment('Ouch, this hole is already full...')
             setHole4('empty')
             setEggsP2(eggsP2 + 1)
           }
@@ -165,19 +168,20 @@ const GameSession = ({ lang }) => {
         case 5:
           if (hole5 === 'empty') {
             lang === 'fr' ? setComment('Bien joué, ce trou est vide !')
-            : setComment('Well done, this hole is empty')
+              : setComment('Well done, this hole is empty')
             setHole5('full')
             setEggsP2(eggsP2 - 1)
           } else {
             lang === 'fr' ? setComment('Arf, ce trou est déjà occupé...')
-            : setComment('Ouch, this hole is already full...')
+              : setComment('Ouch, this hole is already full...')
             setHole5('empty')
             setEggsP2(eggsP2 + 1)
           }
           break;
         default:
           setEggsP2(eggsP2 - 1)
-          console.log('le trou du lapin')
+          lang === 'fr' ? setComment('Et BIM !! Dans l\'trou du Lapin !')
+            : setComment('BAM ! Right in the Rabbid\s Hole !')
           break;
       }
     }
@@ -238,13 +242,20 @@ const GameSession = ({ lang }) => {
           'Lancer le dé'
           : 'Roll the dice'}
         color='blue' />
-      <p>{!p1Turn ? player1 : player2} a fait un</p>
-      <p>{dice}</p>
-      <p style={{color: 'red'}}>{comment}</p>
-      {window && <DiceWindow lang={lang} name={p1Turn ? player1 : player2} />}
+
+      {diceWindow && <DiceWindow
+        lang={lang}
+        name={p1Turn ? player1 : player2} />}
+      {comWindow && <CommentBox
+        lang={lang}
+        comment={comment}
+        dice={dice}
+        name={p1Turn ? player1 : player2}
+        name2={p1Turn ? player2 : player1}
+        p1Turn={p1Turn}
+        setComWindow={setComWindow}
+        setP1Turn={setP1Turn} />}
     </div>
   )
 }
 export default GameSession
-
-//name={p1Turn ? player1 : player2}

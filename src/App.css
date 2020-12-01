@@ -1,9 +1,7 @@
 .App {
   display: flex;
-  flex-direction: column;
-  /* justify-content: center; A RETABLIR EN GRAND ECRAN*/
+  justify-content: center;
   align-items: center;
-  padding-top: 80px;
   min-height: 100vh;
   background-color: #452900;
   background-image: url("https://www.transparenttextures.com/patterns/tileable-wood-colored.png");
