@@ -194,7 +194,7 @@ const GameSession = ({ lang }) => {
   }
 
   useEffect(() => {
-    if (eggsP1 === 0 || eggsP2 === 0) {
+    if (eggsP1 === 4 || eggsP2 === 4) {
       setVicWindow(true)
     }
   }, [eggsP1, eggsP2])
@@ -250,7 +250,7 @@ const GameSession = ({ lang }) => {
           </li>
         </ul>
         <div className='RabbidButt'>
-          <img src={require('../pictures/butt.jpg')} alt='Rabbid butt' />
+          <img src={require('../pictures/butt.png')} alt='Rabbid butt' />
         </div>
       </div>
       <ul className='players_container'>
@@ -290,7 +290,7 @@ const GameSession = ({ lang }) => {
         turnNb={turnNb}
         setTurnNb={setTurnNb}
       />}
-      {vicWindow && <Victory lang={lang} winner={eggsP1 === 0 ? player1 : player2} />}
+      {vicWindow && <Victory lang={lang} winner={eggsP1 === 4 ? player1 : player2} />}
     </div>
   )
 }
