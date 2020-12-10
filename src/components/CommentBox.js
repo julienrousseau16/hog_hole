@@ -6,6 +6,7 @@ import './CommentBox.css'
 
 const CommentBox = ({ lang, comment, dice, name, name2, p1Turn, setComWindow, setP1Turn, turnNb, setTurnNb }) => {
 
+  const [visible, setVisible] = useState(true)
   const [replay, setReplay] = useState(false)
   const [switchTurn, setSwitchTurn] = useState(true)
 
@@ -32,8 +33,8 @@ const CommentBox = ({ lang, comment, dice, name, name2, p1Turn, setComWindow, se
   }, [turnNb, dice])
 
   return (
-    <div className='CommentBox'>
-      <div className='CommentBoxContent'>
+    <div className='CommentBox' style={visible ? { backgroundColor: 'rgba(0, 0, 0, 0.8)' } : { backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
+      <div className='CommentBoxContent' style={visible ? { visibility: 'visible' } : { visibility: 'hidden' }}>
         <h1>{
           lang === 'fr' ?
             `Trou n° ${dice}`
@@ -63,6 +64,20 @@ const CommentBox = ({ lang, comment, dice, name, name2, p1Turn, setComWindow, se
             }
           />}
         </div>
+      </div>
+      <div className='CommentBoxCheck' onClick={() => setVisible(!visible)}>
+        <p>
+          {
+            lang === 'fr' && visible ?
+              'Vérifier la donne ?'
+              : lang === 'fr' && !visible ?
+                'Retour au jeu'
+                : lang !== 'fr' && visible ?
+                  'Check the situation ?'
+                  : 'Back to the game'
+          }
+        </p>
+        <img src={require('../pictures/magglass.png')} alt='magnifying glass' />
       </div>
     </div>
   )

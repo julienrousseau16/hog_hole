@@ -23,7 +23,7 @@ const GameSession = ({ lang }) => {
   const [turnNb, setTurnNb] = useState(1)
 
   const [diceWindow, setDiceWindow] = useState(false)
-  const [comWindow, setComWindow] = useState(false)
+  const [comWindow, setComWindow] = useState(true)
   const [vicWindow, setVicWindow] = useState(false)
 
   // const player1 = useLocation().players.player1
