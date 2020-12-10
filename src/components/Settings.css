@@ -11,49 +11,11 @@
 
 .Settings h1 {
   text-align: center;
-  margin: 20px 0;
+  margin-top: 20px;
   color: rgb(255, 255, 255);
   text-transform: uppercase;
   letter-spacing: 2px;
   font-family: 'Rabbids', cursive;
-}
-
-.playersNumber {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.playersNumber label {
-  margin-bottom: 10px;
-  font-size: 17px;
-  color: #fff;
-}
-
-.Number_selection {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 90%;
-}
-
-.Settings select {
-  width: 55px;
-  font-size: 30px;
-  padding-left: 10px;
-  font-family: 'Rabbids', cursive;
-  background-color:rgb(40, 100, 139);
-  color: #fff;;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0px 2px 2px 1px rgb(52, 81, 99);
-}
-
-.Settings option {
-  width: 30px;
-  font-family: 'Rabbids', cursive;
-  font-size: 30px;
-  background-color: rgb(122, 179, 218);
 }
 
 .inputs_container {
@@ -83,5 +45,5 @@
 }
 
 .Settings #validate {
-  margin-top: 20px;
+  margin: 20px 0;
 }

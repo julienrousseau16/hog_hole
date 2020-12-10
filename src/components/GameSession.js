@@ -19,7 +19,7 @@ const GameSession = ({ lang }) => {
   const [eggsP2, setEggsP2] = useState(6)
   const [p1Turn, setP1Turn] = useState(true)
   const [dice, setDice] = useState()
-  const [comment, setComment] = useState({fr: '', eng: ''})
+  const [comment, setComment] = useState({ fr: '', eng: '' })
   const [turnNb, setTurnNb] = useState(1)
 
   const [diceWindow, setDiceWindow] = useState(false)
@@ -47,146 +47,146 @@ const GameSession = ({ lang }) => {
       switch (dice) {
         case 1:
           if (hole1 === 'empty') {
-            setComment(prevValues => ({ ...prevValues, fr: 'Bien joué, ce trou est vide !'}))
-            setComment(prevValues => ({ ...prevValues, eng: 'Well done, this hole is empty !'}))
+            setComment(prevValues => ({ ...prevValues, fr: 'Bien joué, ce trou est vide !' }))
+            setComment(prevValues => ({ ...prevValues, eng: 'Well done, this hole is empty !' }))
             setHole1('full')
             setEggsP1(eggsP1 - 1)
           } else {
-            setComment(prevValues => ({ ...prevValues, fr: 'Arf, ce trou est déjà occupé...'}))
-            setComment(prevValues => ({ ...prevValues, eng: 'Ouch, this hole is already full...'}))
+            setComment(prevValues => ({ ...prevValues, fr: 'Arf, ce trou est déjà occupé...' }))
+            setComment(prevValues => ({ ...prevValues, eng: 'Ouch, this hole is already full...' }))
             setHole1('empty')
             setEggsP1(eggsP1 + 1)
           }
           break;
         case 2:
           if (hole2 === 'empty') {
-            setComment(prevValues => ({ ...prevValues, fr: 'Bien joué, ce trou est vide !'}))
-            setComment(prevValues => ({ ...prevValues, eng: 'Well done, this hole is empty !'}))
+            setComment(prevValues => ({ ...prevValues, fr: 'Bien joué, ce trou est vide !' }))
+            setComment(prevValues => ({ ...prevValues, eng: 'Well done, this hole is empty !' }))
             setHole2('full')
             setEggsP1(eggsP1 - 1)
           } else {
-            setComment(prevValues => ({ ...prevValues, fr: 'Arf, ce trou est déjà occupé...'}))
-            setComment(prevValues => ({ ...prevValues, eng: 'Ouch, this hole is already full...'}))
+            setComment(prevValues => ({ ...prevValues, fr: 'Arf, ce trou est déjà occupé...' }))
+            setComment(prevValues => ({ ...prevValues, eng: 'Ouch, this hole is already full...' }))
             setHole2('empty')
             setEggsP1(eggsP1 + 1)
           }
           break;
         case 3:
           if (hole3 === 'empty') {
-            setComment(prevValues => ({ ...prevValues, fr: 'Bien joué, ce trou est vide !'}))
-            setComment(prevValues => ({ ...prevValues, eng: 'Well done, this hole is empty !'}))
+            setComment(prevValues => ({ ...prevValues, fr: 'Bien joué, ce trou est vide !' }))
+            setComment(prevValues => ({ ...prevValues, eng: 'Well done, this hole is empty !' }))
             setHole3('full')
             setEggsP1(eggsP1 - 1)
           } else {
-            setComment(prevValues => ({ ...prevValues, fr: 'Arf, ce trou est déjà occupé...'}))
-            setComment(prevValues => ({ ...prevValues, eng: 'Ouch, this hole is already full...'}))
+            setComment(prevValues => ({ ...prevValues, fr: 'Arf, ce trou est déjà occupé...' }))
+            setComment(prevValues => ({ ...prevValues, eng: 'Ouch, this hole is already full...' }))
             setHole3('empty')
             setEggsP1(eggsP1 + 1)
           }
           break;
         case 4:
           if (hole4 === 'empty') {
-            setComment(prevValues => ({ ...prevValues, fr: 'Bien joué, ce trou est vide !'}))
-            setComment(prevValues => ({ ...prevValues, eng: 'Well done, this hole is empty !'}))
+            setComment(prevValues => ({ ...prevValues, fr: 'Bien joué, ce trou est vide !' }))
+            setComment(prevValues => ({ ...prevValues, eng: 'Well done, this hole is empty !' }))
             setHole4('full')
             setEggsP1(eggsP1 - 1)
           } else {
-            setComment(prevValues => ({ ...prevValues, fr: 'Arf, ce trou est déjà occupé...'}))
-            setComment(prevValues => ({ ...prevValues, eng: 'Ouch, this hole is already full...'}))
+            setComment(prevValues => ({ ...prevValues, fr: 'Arf, ce trou est déjà occupé...' }))
+            setComment(prevValues => ({ ...prevValues, eng: 'Ouch, this hole is already full...' }))
             setHole4('empty')
             setEggsP1(eggsP1 + 1)
           }
           break;
         case 5:
           if (hole5 === 'empty') {
-            setComment(prevValues => ({ ...prevValues, fr: 'Bien joué, ce trou est vide !'}))
-            setComment(prevValues => ({ ...prevValues, eng: 'Well done, this hole is empty !'}))
+            setComment(prevValues => ({ ...prevValues, fr: 'Bien joué, ce trou est vide !' }))
+            setComment(prevValues => ({ ...prevValues, eng: 'Well done, this hole is empty !' }))
             setHole5('full')
             setEggsP1(eggsP1 - 1)
           } else {
-            setComment(prevValues => ({ ...prevValues, fr: 'Arf, ce trou est déjà occupé...'}))
-            setComment(prevValues => ({ ...prevValues, eng: 'Ouch, this hole is already full...'}))
+            setComment(prevValues => ({ ...prevValues, fr: 'Arf, ce trou est déjà occupé...' }))
+            setComment(prevValues => ({ ...prevValues, eng: 'Ouch, this hole is already full...' }))
             setHole5('empty')
             setEggsP1(eggsP1 + 1)
           }
           break;
         default:
           setEggsP1(eggsP1 - 1)
-          setComment(prevValues => ({ ...prevValues, fr: 'Et BIM !! Dans l\'trou du Lapin !'}))
-          setComment(prevValues => ({ ...prevValues, eng: 'BAM ! Right in the Rabbid\'s Hole !'}))
+          setComment(prevValues => ({ ...prevValues, fr: 'Et BIM !! Dans l\'trou du Lapin !' }))
+          setComment(prevValues => ({ ...prevValues, eng: 'BAM ! Right in the Rabbid\'s Hole !' }))
           break;
       }
     } else {
       switch (dice) {
         case 1:
           if (hole1 === 'empty') {
-            setComment(prevValues => ({ ...prevValues, fr: 'Bien joué, ce trou est vide !'}))
-            setComment(prevValues => ({ ...prevValues, eng: 'Well done, this hole is empty !'}))
+            setComment(prevValues => ({ ...prevValues, fr: 'Bien joué, ce trou est vide !' }))
+            setComment(prevValues => ({ ...prevValues, eng: 'Well done, this hole is empty !' }))
             setHole1('full')
             setEggsP2(eggsP2 - 1)
           } else {
-            setComment(prevValues => ({ ...prevValues, fr: 'Arf, ce trou est déjà occupé...'}))
-            setComment(prevValues => ({ ...prevValues, eng: 'Ouch, this hole is already full...'}))
+            setComment(prevValues => ({ ...prevValues, fr: 'Arf, ce trou est déjà occupé...' }))
+            setComment(prevValues => ({ ...prevValues, eng: 'Ouch, this hole is already full...' }))
             setHole1('empty')
             setEggsP2(eggsP2 + 1)
           }
           break;
         case 2:
           if (hole2 === 'empty') {
-            setComment(prevValues => ({ ...prevValues, fr: 'Bien joué, ce trou est vide !'}))
-            setComment(prevValues => ({ ...prevValues, eng: 'Well done, this hole is empty !'}))
+            setComment(prevValues => ({ ...prevValues, fr: 'Bien joué, ce trou est vide !' }))
+            setComment(prevValues => ({ ...prevValues, eng: 'Well done, this hole is empty !' }))
             setHole2('full')
             setEggsP2(eggsP2 - 1)
           } else {
-            setComment(prevValues => ({ ...prevValues, fr: 'Arf, ce trou est déjà occupé...'}))
-            setComment(prevValues => ({ ...prevValues, eng: 'Ouch, this hole is already full...'}))
+            setComment(prevValues => ({ ...prevValues, fr: 'Arf, ce trou est déjà occupé...' }))
+            setComment(prevValues => ({ ...prevValues, eng: 'Ouch, this hole is already full...' }))
             setHole2('empty')
             setEggsP2(eggsP2 + 1)
           }
           break;
         case 3:
           if (hole3 === 'empty') {
-            setComment(prevValues => ({ ...prevValues, fr: 'Bien joué, ce trou est vide !'}))
-            setComment(prevValues => ({ ...prevValues, eng: 'Well done, this hole is empty !'}))
+            setComment(prevValues => ({ ...prevValues, fr: 'Bien joué, ce trou est vide !' }))
+            setComment(prevValues => ({ ...prevValues, eng: 'Well done, this hole is empty !' }))
             setHole3('full')
             setEggsP2(eggsP2 - 1)
           } else {
-            setComment(prevValues => ({ ...prevValues, fr: 'Arf, ce trou est déjà occupé...'}))
-            setComment(prevValues => ({ ...prevValues, eng: 'Ouch, this hole is already full...'}))
+            setComment(prevValues => ({ ...prevValues, fr: 'Arf, ce trou est déjà occupé...' }))
+            setComment(prevValues => ({ ...prevValues, eng: 'Ouch, this hole is already full...' }))
             setHole3('empty')
             setEggsP2(eggsP2 + 1)
           }
           break;
         case 4:
           if (hole4 === 'empty') {
-            setComment(prevValues => ({ ...prevValues, fr: 'Bien joué, ce trou est vide !'}))
-            setComment(prevValues => ({ ...prevValues, eng: 'Well done, this hole is empty !'}))
+            setComment(prevValues => ({ ...prevValues, fr: 'Bien joué, ce trou est vide !' }))
+            setComment(prevValues => ({ ...prevValues, eng: 'Well done, this hole is empty !' }))
             setHole4('full')
             setEggsP2(eggsP2 - 1)
           } else {
-            setComment(prevValues => ({ ...prevValues, fr: 'Arf, ce trou est déjà occupé...'}))
-            setComment(prevValues => ({ ...prevValues, eng: 'Ouch, this hole is already full...'}))
+            setComment(prevValues => ({ ...prevValues, fr: 'Arf, ce trou est déjà occupé...' }))
+            setComment(prevValues => ({ ...prevValues, eng: 'Ouch, this hole is already full...' }))
             setHole4('empty')
             setEggsP2(eggsP2 + 1)
           }
           break;
         case 5:
           if (hole5 === 'empty') {
-            setComment(prevValues => ({ ...prevValues, fr: 'Bien joué, ce trou est vide !'}))
-            setComment(prevValues => ({ ...prevValues, eng: 'Well done, this hole is empty !'}))
+            setComment(prevValues => ({ ...prevValues, fr: 'Bien joué, ce trou est vide !' }))
+            setComment(prevValues => ({ ...prevValues, eng: 'Well done, this hole is empty !' }))
             setHole5('full')
             setEggsP2(eggsP2 - 1)
           } else {
-            setComment(prevValues => ({ ...prevValues, fr: 'Arf, ce trou est déjà occupé...'}))
-            setComment(prevValues => ({ ...prevValues, eng: 'Ouch, this hole is already full...'}))
+            setComment(prevValues => ({ ...prevValues, fr: 'Arf, ce trou est déjà occupé...' }))
+            setComment(prevValues => ({ ...prevValues, eng: 'Ouch, this hole is already full...' }))
             setHole5('empty')
             setEggsP2(eggsP2 + 1)
           }
           break;
         default:
           setEggsP2(eggsP2 - 1)
-          setComment(prevValues => ({ ...prevValues, fr: 'Et BIM !! Dans l\'trou du Lapin !'}))
-          setComment(prevValues => ({ ...prevValues, eng: 'BAM ! Right in the Rabbid\'s Hole !'}))
+          setComment(prevValues => ({ ...prevValues, fr: 'Et BIM !! Dans l\'trou du Lapin !' }))
+          setComment(prevValues => ({ ...prevValues, eng: 'BAM ! Right in the Rabbid\'s Hole !' }))
           break;
       }
     }
@@ -194,7 +194,7 @@ const GameSession = ({ lang }) => {
   }
 
   useEffect(() => {
-    if (eggsP1 === 4 || eggsP2 === 4) {
+    if (eggsP1 === 0 || eggsP2 === 0) {
       setVicWindow(true)
     }
   }, [eggsP1, eggsP2])
@@ -206,41 +206,62 @@ const GameSession = ({ lang }) => {
           'Session de Jeu'
           : 'Game Session'}
       </h1>
-
-      <div className='holes_container'>
-        <img
-          src={hole1 === 'empty' ?
-            require('../pictures/empty.png')
-            : require('../pictures/full.png')}
-          alt='hole' />
-        <img
-          src={hole2 === 'empty' ?
-            require('../pictures/empty.png')
-            : require('../pictures/full.png')}
-          alt='hole' />
-        <img
-          src={hole3 === 'empty' ?
-            require('../pictures/empty.png')
-            : require('../pictures/full.png')}
-          alt='hole' />
-        <img
-          src={hole4 === 'empty' ?
-            require('../pictures/empty.png')
-            : require('../pictures/full.png')}
-          alt='hole' />
-        <img
-          src={hole5 === 'empty' ?
-            require('../pictures/empty.png')
-            : require('../pictures/full.png')}
-          alt='hole' />
+      <div className='GameSessionPreview'>
+        <ul className='holes_container'>
+          <li>
+            <img
+              src={hole1 === 'empty' ?
+                require('../pictures/empty.png')
+                : require('../pictures/full.png')}
+              alt='hole' />
+              <p>1</p>
+          </li>
+          <li>
+            <img
+              src={hole2 === 'empty' ?
+                require('../pictures/empty.png')
+                : require('../pictures/full.png')}
+              alt='hole' />
+              <p>2</p>
+          </li>
+          <li>
+            <img
+              src={hole3 === 'empty' ?
+                require('../pictures/empty.png')
+                : require('../pictures/full.png')}
+              alt='hole' />
+              <p>3</p>
+          </li>
+          <li>
+            <img
+              src={hole4 === 'empty' ?
+                require('../pictures/empty.png')
+                : require('../pictures/full.png')}
+              alt='hole' />
+              <p>4</p>
+          </li>
+          <li>
+            <img
+              src={hole5 === 'empty' ?
+                require('../pictures/empty.png')
+                : require('../pictures/full.png')}
+              alt='hole' />
+              <p>5</p>
+          </li>
+        </ul>
+        <div className='RabbidButt'>
+          <img src={require('../pictures/butt.jpg')} alt='Rabbid butt' />
+        </div>
       </div>
       <ul className='players_container'>
         <li className={p1Turn ? 'currentPlayer' : 'waitingPlayer'}>
+          <img className='head' src={require('../pictures/rabbid_head.png')} alt='rabbid head' />
           <h3>{player1}</h3>
           <img src={require('../pictures/egg.png')} alt='egg' />
           <p>x {eggsP1}</p>
         </li>
         <li className={!p1Turn ? 'currentPlayer' : 'waitingPlayer'}>
+          <img className='head' src={require('../pictures/rabbid_head.png')} alt='rabbid head' />
           <h3>{player2}</h3>
           <img src={require('../pictures/egg.png')} alt='egg' />
           <p>x {eggsP2}</p>
@@ -265,11 +286,11 @@ const GameSession = ({ lang }) => {
         name2={p1Turn ? player2 : player1}
         p1Turn={p1Turn}
         setComWindow={setComWindow}
-        setP1Turn={setP1Turn} 
+        setP1Turn={setP1Turn}
         turnNb={turnNb}
         setTurnNb={setTurnNb}
-        />}
-        {vicWindow && <Victory lang={lang} winner={eggsP1 === 4 ? player1 : player2}/>}
+      />}
+      {vicWindow && <Victory lang={lang} winner={eggsP1 === 0 ? player1 : player2} />}
     </div>
   )
 }
