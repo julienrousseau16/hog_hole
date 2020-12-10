@@ -1,0 +1,33 @@
+.Victory {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.VictoryContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  padding: 5%;
+  background-color: rgb(62, 152, 212);
+  border: 5px solid rgb(40, 100, 139);
+  border-radius: 10px;
+}
+
+.VictoryContent h1 {
+  color: #fff !important;
+  margin-bottom: 0 !important;
+}
+
+.VictoryContent img {
+  height: 300px;
+}

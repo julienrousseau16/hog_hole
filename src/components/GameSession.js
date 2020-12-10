@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
 import Button from './Button'
 import CommentBox from './CommentBox'
 import DiceWindow from './DiceWindow'
+import Victory from './Victory'
 
 import './GameSession.css'
 
@@ -23,6 +24,7 @@ const GameSession = ({ lang }) => {
 
   const [diceWindow, setDiceWindow] = useState(false)
   const [comWindow, setComWindow] = useState(false)
+  const [vicWindow, setVicWindow] = useState(false)
 
   // const player1 = useLocation().players.player1
   // const player2 = useLocation().players.player2
@@ -32,9 +34,11 @@ const GameSession = ({ lang }) => {
   const diceRoll = () => {
     const random = Math.floor(Math.random() * (7 - 1) + 1)
     setDiceWindow(true)
-    setTimeout(() => setDiceWindow(false), 4000);
-    setDice(random)
-    diceResult(random)
+    setTimeout(() => {
+      setDiceWindow(false)
+      setDice(random)
+      diceResult(random)
+    }, 4000);
     setTimeout(() => setComWindow(true), 4050);
   }
 
@@ -189,6 +193,12 @@ const GameSession = ({ lang }) => {
 
   }
 
+  useEffect(() => {
+    if (eggsP1 === 4 || eggsP2 === 4) {
+      setVicWindow(true)
+    }
+  }, [eggsP1, eggsP2])
+
   return (
     <div className='GameSession'>
       <h1>
@@ -247,7 +257,7 @@ const GameSession = ({ lang }) => {
       {diceWindow && <DiceWindow
         lang={lang}
         name={p1Turn ? player1 : player2} />}
-      {comWindow && <CommentBox
+      {comWindow && !vicWindow && <CommentBox
         lang={lang}
         comment={comment}
         dice={dice}
@@ -259,6 +269,7 @@ const GameSession = ({ lang }) => {
         turnNb={turnNb}
         setTurnNb={setTurnNb}
         />}
+        {vicWindow && <Victory lang={lang} winner={eggsP1 === 4 ? player1 : player2}/>}
     </div>
   )
 }

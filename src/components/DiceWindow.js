@@ -16,7 +16,7 @@ const DiceWindow = ({ lang, name }) => {
         <h1>
           {lang === 'fr' ? 'Attention !' : 'Watch out !'}
         </h1>
-        <img src={require('../pictures/thrower.png')} />
+        <img src={require('../pictures/thrower.png')} alt='rabbid throwing an egg' />
         <p>{name}
           {lang === 'fr' ?
             ' s\'apprête à tirer...'

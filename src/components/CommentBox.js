@@ -29,21 +29,20 @@ const CommentBox = ({ lang, comment, dice, name, name2, p1Turn, setComWindow, se
     } else {
       setReplay(false)
     }
-  }, [turnNb])
+  }, [turnNb, dice])
 
   return (
     <div className='CommentBox'>
       <div className='CommentBoxContent'>
-        <h1>Verdict...</h1>
-        <p>{
+        <h1>{
           lang === 'fr' ?
-            `L'oeuf de ${name} a atterit dans le trou n° ${dice}`
-            : `${name}'s egg landed in Hole n° ${dice}`
-        }...</p>
+            `Trou n° ${dice}`
+            : `Hole n° ${dice}`
+        } !!</h1>
         <img src={require(
           dice === 6 ? '../pictures/bingonobg.png'
             : comment.includes('Bien' || 'Well') ? '../pictures/smile.png'
-              : '../pictures/missed.png'
+              : '../pictures/sad.png'
         )} alt='result' />
         <p id='Comment'>{comment}</p>
         <div className='CommentBoxActions'>
