@@ -19,14 +19,15 @@ const GameSession = ({ lang }) => {
   const [p1Turn, setP1Turn] = useState(true)
   const [dice, setDice] = useState()
   const [comment, setComment] = useState('')
+  const [turnNb, setTurnNb] = useState(1)
 
   const [diceWindow, setDiceWindow] = useState(false)
   const [comWindow, setComWindow] = useState(false)
 
-  const player1 = useLocation().players.player1
-  const player2 = useLocation().players.player2
-  // const player1 = 'joe'
-  // const player2 = 'jack'
+  // const player1 = useLocation().players.player1
+  // const player2 = useLocation().players.player2
+  const player1 = 'joe'
+  const player2 = 'jack'
 
   const diceRoll = () => {
     const random = Math.floor(Math.random() * (7 - 1) + 1)
@@ -108,7 +109,7 @@ const GameSession = ({ lang }) => {
         default:
           setEggsP1(eggsP1 - 1)
           lang === 'fr' ? setComment('Et BIM !! Dans l\'trou du Lapin !')
-            : setComment('BAM ! Right in the Rabbid\s Hole !')
+            : setComment('BAM ! Right in the Rabbid\'s Hole !')
           break;
       }
     } else {
@@ -181,7 +182,7 @@ const GameSession = ({ lang }) => {
         default:
           setEggsP2(eggsP2 - 1)
           lang === 'fr' ? setComment('Et BIM !! Dans l\'trou du Lapin !')
-            : setComment('BAM ! Right in the Rabbid\s Hole !')
+            : setComment('BAM ! Right in the Rabbid\'s Hole !')
           break;
       }
     }
@@ -254,7 +255,10 @@ const GameSession = ({ lang }) => {
         name2={p1Turn ? player2 : player1}
         p1Turn={p1Turn}
         setComWindow={setComWindow}
-        setP1Turn={setP1Turn} />}
+        setP1Turn={setP1Turn} 
+        turnNb={turnNb}
+        setTurnNb={setTurnNb}
+        />}
     </div>
   )
 }
