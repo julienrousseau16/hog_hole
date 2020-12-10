@@ -42,10 +42,14 @@ const CommentBox = ({ lang, comment, dice, name, name2, p1Turn, setComWindow, se
         } !!</h1>
         <img src={require(
           dice === 6 ? '../pictures/bingonobg.png'
-            : comment.includes('Bien' || 'Well') ? '../pictures/smile.png'
+            : comment.fr.includes('Bien') ? '../pictures/smile.png'
               : '../pictures/sad.png'
         )} alt='result' />
-        <p id='Comment'>{comment}</p>
+        <p id='Comment'>{
+          lang === 'fr' ?
+            comment.fr
+            : comment.eng
+        }</p>
         <div className='CommentBoxActions'>
           {replay && <Button
             color='validate'
