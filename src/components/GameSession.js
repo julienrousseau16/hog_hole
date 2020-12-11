@@ -282,8 +282,7 @@ const GameSession = ({ lang }) => {
         lang={lang}
         comment={comment}
         dice={dice}
-        name={p1Turn ? player1 : player2}
-        name2={p1Turn ? player2 : player1}
+        name={p1Turn ? player2 : player1}
         p1Turn={p1Turn}
         setComWindow={setComWindow}
         setP1Turn={setP1Turn}

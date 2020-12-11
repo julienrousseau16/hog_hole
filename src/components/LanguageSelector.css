@@ -8,11 +8,13 @@
   z-index: 2;
 }
 .flag {
-  width: 40px;
+  width: 30px;
+  height: 30px;
   margin-left: 10px;
 }
 .noflag {
-  width: 40px;
+  width: 30px;
+  height: 30px;
   margin-left: 10px;
   filter: grayscale(100%);
 }

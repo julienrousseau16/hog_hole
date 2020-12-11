@@ -36,12 +36,13 @@
   align-items: center;
 }
 .holes_container li img {
-  width: 25px;
+  width: 40px;
 }
 .holes_container li p {
   margin-left: 10px;
   font-family: 'Rabbids', 'cursive';
   font-size: 1.5em;
+  color: rgb(75, 43, 16);
 }
 .RabbidButt {
   width: 50%;
@@ -55,7 +56,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 
@@ -63,6 +64,7 @@
 .waitingPlayer, .currentPlayer {
   display: flex;
   align-items: center;
+  justify-content: center;
   list-style: none;
 }
 .waitingPlayer h3, .currentPlayer h3 {
@@ -80,7 +82,7 @@
 }
 .head {
   margin-left: 0 !important;
-  width: 50px !important;
+  width: 40px !important;
 }
 
 /* CURRENT PLAYER */

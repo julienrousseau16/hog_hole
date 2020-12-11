@@ -4,7 +4,7 @@ import Button from './Button'
 
 import './CommentBox.css'
 
-const CommentBox = ({ lang, comment, dice, name, name2, p1Turn, setComWindow, setP1Turn, turnNb, setTurnNb }) => {
+const CommentBox = ({ lang, comment, dice, name, p1Turn, setComWindow, setP1Turn, turnNb, setTurnNb }) => {
 
   const [visible, setVisible] = useState(true)
   const [replay, setReplay] = useState(false)
@@ -63,8 +63,8 @@ const CommentBox = ({ lang, comment, dice, name, name2, p1Turn, setComWindow, se
             onClick={changeTurn}
             text={
               lang === 'fr' ?
-                `À ${name2} !`
-                : `${name2}'s turn !`
+                `À ${name} !`
+                : `${name}'s turn !`
             }
           />}
         </div>
@@ -73,11 +73,11 @@ const CommentBox = ({ lang, comment, dice, name, name2, p1Turn, setComWindow, se
         <p>
           {
             lang === 'fr' && visible ?
-              'Vérifier la donne ?'
+              'Voir le plateau ?'
               : lang === 'fr' && !visible ?
                 'Retour au jeu'
                 : lang !== 'fr' && visible ?
-                  'Check the situation ?'
+                  'Check before playing ?'
                   : 'Back to the game'
           }
         </p>
