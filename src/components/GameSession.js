@@ -26,10 +26,10 @@ const GameSession = ({ lang }) => {
   const [comWindow, setComWindow] = useState(false)
   const [vicWindow, setVicWindow] = useState(false)
 
-  // const player1 = useLocation().players.player1
-  // const player2 = useLocation().players.player2
-  const player1 = 'joe'
-  const player2 = 'jack'
+  const player1 = useLocation().players.player1
+  const player2 = useLocation().players.player2
+  // const player1 = 'Gradubbid'
+  // const player2 = 'jack'
 
   const diceRoll = () => {
     const random = Math.floor(Math.random() * (7 - 1) + 1)
@@ -194,7 +194,7 @@ const GameSession = ({ lang }) => {
   }
 
   useEffect(() => {
-    if (eggsP1 === 4 || eggsP2 === 4) {
+    if (eggsP1 === 0 || eggsP2 === 0) {
       setVicWindow(true)
     }
   }, [eggsP1, eggsP2])
@@ -289,7 +289,7 @@ const GameSession = ({ lang }) => {
         turnNb={turnNb}
         setTurnNb={setTurnNb}
       />}
-      {vicWindow && <Victory lang={lang} winner={eggsP1 === 4 ? player1 : player2} />}
+      {vicWindow && <Victory lang={lang} winner={eggsP1 === 0 ? player1 : player2} />}
     </div>
   )
 }

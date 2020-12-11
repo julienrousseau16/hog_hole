@@ -54,7 +54,7 @@
 .players_container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   margin-top: 10px;
 }
@@ -64,12 +64,12 @@
 .waitingPlayer, .currentPlayer {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   list-style: none;
 }
 .waitingPlayer h3, .currentPlayer h3 {
   font-family: 'Rabbids';
-  font-size: 30px;
+  font-size: 25px;
   letter-spacing: 1px;
 }
 .waitingPlayer img, .currentPlayer img {
@@ -87,13 +87,13 @@
 
 /* CURRENT PLAYER */
 .currentPlayer h3, .currentPlayer p {
-  color: rgb(5, 58, 13);
+  color: #fff;
 }
 
 
 /* WAITING PLAYER */
 .waitingPlayer h3, .waitingPlayer p, .waitingPlayer img {
-  color: #fff;
+  color: rgb(5, 58, 13);
   opacity: 0.5;
 }
 .waitingPlayer .head {

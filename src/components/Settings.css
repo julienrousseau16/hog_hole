@@ -23,24 +23,27 @@
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
+  width: 100%;
   text-align: center;
 }
 
 .inputs_container label {
   margin-bottom: 5px;
+  font-size: 1.2em;
   color: #fff;
 }
 
 .inputs_container input {
-  height: 30px;
-  margin-bottom: 10px;
+  height: 50px;
+  width: 80%;
+  margin-bottom: 15px;
   padding-left: 10px;
   background-color:rgb(40, 100, 139);
   border: none;
   border-radius: 5px;
   box-shadow: 0px 2px 2px 1px rgb(52, 81, 99);
   font-family: 'Rabbids', 'cursive';
-  font-size: 20px;
+  font-size: 35px;
   color: #fff;
 }
 

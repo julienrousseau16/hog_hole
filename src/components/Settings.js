@@ -5,8 +5,15 @@ import './Settings.css'
 
 const Settings = ({ lang }) => {
 
-  const [player1, setPlayer1] = useState('Bugs Rabbid')
-  const [player2, setPlayer2] = useState('Ink\' Rabbidle')
+  const [players, setPlayers] = useState({ player1: 'Coco', player2: 'Lapin' })
+
+  const nameRegister = (e) => {
+    const name = e.target.value
+    const player = e.target.name
+    if (name.length <= 10) {
+      setPlayers(prevValues => ({ ...prevValues, [player]: name })) 
+    }
+  }
 
   return (
     <div className='Settings'>
@@ -24,9 +31,10 @@ const Settings = ({ lang }) => {
         </label>
         <input
           required
-          onChange={e => setPlayer1(e.target.value)}
+          onChange={nameRegister}
           type='text'
-          value={player1}
+          value={players.player1}
+          name='player1'
         />
         <label>
           {lang === 'fr' ?
@@ -35,13 +43,14 @@ const Settings = ({ lang }) => {
         </label>
         <input
           required
-          onChange={e => setPlayer2(e.target.value)}
+          onChange={nameRegister}
           type='text'
-          value={player2}
+          value={players.player2}
+          name='player2'
         />
         <Button
           type='nav'
-          url={{ pathname: '/gamesession', players: { player1, player2 } }}
+          url={{ pathname: '/gamesession', players }}
           text={lang === 'fr' ? 'C\'est parti !' : 'Here we go !'}
           color='validate' />
       </div>
