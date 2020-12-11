@@ -10,11 +10,14 @@ import './GameSession.css'
 
 const GameSession = ({ lang }) => {
 
-  const [hole1, setHole1] = useState('empty')
-  const [hole2, setHole2] = useState('empty')
-  const [hole3, setHole3] = useState('empty')
-  const [hole4, setHole4] = useState('empty')
-  const [hole5, setHole5] = useState('empty')
+  const initialValues = [
+    { id: 1, status: 'empty' },
+    { id: 2, status: 'empty' },
+    { id: 3, status: 'empty' },
+    { id: 4, status: 'empty' },
+    { id: 5, status: 'empty' }
+  ]
+  const [holes, setHoles] = useState(initialValues)
   const [eggsP1, setEggsP1] = useState(6)
   const [eggsP2, setEggsP2] = useState(6)
   const [p1Turn, setP1Turn] = useState(true)
@@ -26,10 +29,10 @@ const GameSession = ({ lang }) => {
   const [comWindow, setComWindow] = useState(false)
   const [vicWindow, setVicWindow] = useState(false)
 
-  const player1 = useLocation().players.player1
-  const player2 = useLocation().players.player2
-  // const player1 = 'Gradubbid'
-  // const player2 = 'jack'
+  // const player1 = useLocation().players.player1
+  // const player2 = useLocation().players.player2
+  const player1 = 'Gradubbid'
+  const player2 = 'jack'
 
   const diceRoll = () => {
     const random = Math.floor(Math.random() * (7 - 1) + 1)
@@ -43,70 +46,81 @@ const GameSession = ({ lang }) => {
   }
 
   const diceResult = dice => {
+    const tmp = [...holes]
     if (p1Turn) {
       switch (dice) {
         case 1:
-          if (hole1 === 'empty') {
+          if (holes[0].status === 'empty') {
             setComment(prevValues => ({ ...prevValues, fr: 'Bien joué, ce trou est vide !' }))
             setComment(prevValues => ({ ...prevValues, eng: 'Well done, this hole is empty !' }))
-            setHole1('full')
+            tmp[0].status = 'full'
+            setHoles(tmp)
             setEggsP1(eggsP1 - 1)
           } else {
             setComment(prevValues => ({ ...prevValues, fr: 'Arf, ce trou est déjà occupé...' }))
             setComment(prevValues => ({ ...prevValues, eng: 'Ouch, this hole is already full...' }))
-            setHole1('empty')
+            tmp[0].status = 'empty'
+            setHoles(tmp)
             setEggsP1(eggsP1 + 1)
           }
           break;
         case 2:
-          if (hole2 === 'empty') {
+          if (holes[1].status === 'empty') {
             setComment(prevValues => ({ ...prevValues, fr: 'Bien joué, ce trou est vide !' }))
             setComment(prevValues => ({ ...prevValues, eng: 'Well done, this hole is empty !' }))
-            setHole2('full')
+            tmp[1].status = 'full'
+            setHoles(tmp)
             setEggsP1(eggsP1 - 1)
           } else {
             setComment(prevValues => ({ ...prevValues, fr: 'Arf, ce trou est déjà occupé...' }))
             setComment(prevValues => ({ ...prevValues, eng: 'Ouch, this hole is already full...' }))
-            setHole2('empty')
+            tmp[1].status = 'empty'
+            setHoles(tmp)
             setEggsP1(eggsP1 + 1)
           }
           break;
         case 3:
-          if (hole3 === 'empty') {
+          if (holes[2].status === 'empty') {
             setComment(prevValues => ({ ...prevValues, fr: 'Bien joué, ce trou est vide !' }))
             setComment(prevValues => ({ ...prevValues, eng: 'Well done, this hole is empty !' }))
-            setHole3('full')
+            tmp[2].status = 'full'
+            setHoles(tmp)
             setEggsP1(eggsP1 - 1)
           } else {
             setComment(prevValues => ({ ...prevValues, fr: 'Arf, ce trou est déjà occupé...' }))
             setComment(prevValues => ({ ...prevValues, eng: 'Ouch, this hole is already full...' }))
-            setHole3('empty')
+            tmp[2].status = 'empty'
+            setHoles(tmp)
             setEggsP1(eggsP1 + 1)
           }
           break;
         case 4:
-          if (hole4 === 'empty') {
+          if (holes[3].status === 'empty') {
             setComment(prevValues => ({ ...prevValues, fr: 'Bien joué, ce trou est vide !' }))
             setComment(prevValues => ({ ...prevValues, eng: 'Well done, this hole is empty !' }))
-            setHole4('full')
+            tmp[3].status = 'full'
+            setHoles(tmp)
             setEggsP1(eggsP1 - 1)
           } else {
             setComment(prevValues => ({ ...prevValues, fr: 'Arf, ce trou est déjà occupé...' }))
             setComment(prevValues => ({ ...prevValues, eng: 'Ouch, this hole is already full...' }))
-            setHole4('empty')
+            tmp[3].status = 'empty'
+            setHoles(tmp)
             setEggsP1(eggsP1 + 1)
           }
           break;
         case 5:
-          if (hole5 === 'empty') {
+          if (holes[3].status === 'empty') {
             setComment(prevValues => ({ ...prevValues, fr: 'Bien joué, ce trou est vide !' }))
             setComment(prevValues => ({ ...prevValues, eng: 'Well done, this hole is empty !' }))
-            setHole5('full')
+            tmp[4].status = 'full'
+            setHoles(tmp)
             setEggsP1(eggsP1 - 1)
           } else {
             setComment(prevValues => ({ ...prevValues, fr: 'Arf, ce trou est déjà occupé...' }))
             setComment(prevValues => ({ ...prevValues, eng: 'Ouch, this hole is already full...' }))
-            setHole5('empty')
+            tmp[4].status = 'empty'
+            setHoles(tmp)
             setEggsP1(eggsP1 + 1)
           }
           break;
@@ -119,67 +133,77 @@ const GameSession = ({ lang }) => {
     } else {
       switch (dice) {
         case 1:
-          if (hole1 === 'empty') {
+          if (holes[0].status === 'empty') {
             setComment(prevValues => ({ ...prevValues, fr: 'Bien joué, ce trou est vide !' }))
             setComment(prevValues => ({ ...prevValues, eng: 'Well done, this hole is empty !' }))
-            setHole1('full')
+            tmp[0].status = 'full'
+            setHoles(tmp)
             setEggsP2(eggsP2 - 1)
           } else {
             setComment(prevValues => ({ ...prevValues, fr: 'Arf, ce trou est déjà occupé...' }))
             setComment(prevValues => ({ ...prevValues, eng: 'Ouch, this hole is already full...' }))
-            setHole1('empty')
+            tmp[0].status = 'empty'
+            setHoles(tmp)
             setEggsP2(eggsP2 + 1)
           }
           break;
         case 2:
-          if (hole2 === 'empty') {
+          if (holes[1].status === 'empty') {
             setComment(prevValues => ({ ...prevValues, fr: 'Bien joué, ce trou est vide !' }))
             setComment(prevValues => ({ ...prevValues, eng: 'Well done, this hole is empty !' }))
-            setHole2('full')
+            tmp[1].status = 'full'
+            setHoles(tmp)
             setEggsP2(eggsP2 - 1)
           } else {
             setComment(prevValues => ({ ...prevValues, fr: 'Arf, ce trou est déjà occupé...' }))
             setComment(prevValues => ({ ...prevValues, eng: 'Ouch, this hole is already full...' }))
-            setHole2('empty')
+            tmp[1].status = 'empty'
+            setHoles(tmp)
             setEggsP2(eggsP2 + 1)
           }
           break;
         case 3:
-          if (hole3 === 'empty') {
+          if (holes[2].status === 'empty') {
             setComment(prevValues => ({ ...prevValues, fr: 'Bien joué, ce trou est vide !' }))
             setComment(prevValues => ({ ...prevValues, eng: 'Well done, this hole is empty !' }))
-            setHole3('full')
+            tmp[2].status = 'full'
+            setHoles(tmp)
             setEggsP2(eggsP2 - 1)
           } else {
             setComment(prevValues => ({ ...prevValues, fr: 'Arf, ce trou est déjà occupé...' }))
             setComment(prevValues => ({ ...prevValues, eng: 'Ouch, this hole is already full...' }))
-            setHole3('empty')
+            tmp[2].status = 'empty'
+            setHoles(tmp)
             setEggsP2(eggsP2 + 1)
           }
           break;
         case 4:
-          if (hole4 === 'empty') {
+          if (holes[3].status === 'empty') {
             setComment(prevValues => ({ ...prevValues, fr: 'Bien joué, ce trou est vide !' }))
             setComment(prevValues => ({ ...prevValues, eng: 'Well done, this hole is empty !' }))
-            setHole4('full')
+            tmp[3].status = 'full'
+            setHoles(tmp)
             setEggsP2(eggsP2 - 1)
           } else {
             setComment(prevValues => ({ ...prevValues, fr: 'Arf, ce trou est déjà occupé...' }))
             setComment(prevValues => ({ ...prevValues, eng: 'Ouch, this hole is already full...' }))
-            setHole4('empty')
+            tmp[3].status = 'empty'
+            setHoles(tmp)
             setEggsP2(eggsP2 + 1)
           }
           break;
         case 5:
-          if (hole5 === 'empty') {
+          if (holes[4].status === 'empty') {
             setComment(prevValues => ({ ...prevValues, fr: 'Bien joué, ce trou est vide !' }))
             setComment(prevValues => ({ ...prevValues, eng: 'Well done, this hole is empty !' }))
-            setHole5('full')
+            tmp[4].status = 'full'
+            setHoles(tmp)
             setEggsP2(eggsP2 - 1)
           } else {
             setComment(prevValues => ({ ...prevValues, fr: 'Arf, ce trou est déjà occupé...' }))
             setComment(prevValues => ({ ...prevValues, eng: 'Ouch, this hole is already full...' }))
-            setHole5('empty')
+            tmp[4].status = 'empty'
+            setHoles(tmp)
             setEggsP2(eggsP2 + 1)
           }
           break;
@@ -201,53 +225,13 @@ const GameSession = ({ lang }) => {
 
   return (
     <div className='GameSession'>
-      <h1>
-        {lang === 'fr' ?
-          'Session de Jeu'
-          : 'Game Session'}
-      </h1>
       <div className='GameSessionPreview'>
         <ul className='holes_container'>
-          <li>
-            <img
-              src={hole1 === 'empty' ?
-                require('../pictures/empty.png')
-                : require('../pictures/full.png')}
-              alt='hole' />
-              <p>1</p>
-          </li>
-          <li>
-            <img
-              src={hole2 === 'empty' ?
-                require('../pictures/empty.png')
-                : require('../pictures/full.png')}
-              alt='hole' />
-              <p>2</p>
-          </li>
-          <li>
-            <img
-              src={hole3 === 'empty' ?
-                require('../pictures/empty.png')
-                : require('../pictures/full.png')}
-              alt='hole' />
-              <p>3</p>
-          </li>
-          <li>
-            <img
-              src={hole4 === 'empty' ?
-                require('../pictures/empty.png')
-                : require('../pictures/full.png')}
-              alt='hole' />
-              <p>4</p>
-          </li>
-          <li>
-            <img
-              src={hole5 === 'empty' ?
-                require('../pictures/empty.png')
-                : require('../pictures/full.png')}
-              alt='hole' />
-              <p>5</p>
-          </li>
+          {holes.map((hole, index) =>
+            <li key={index}>
+              <img src={require(hole.status === 'empty' ? '../pictures/empty.png' : '../pictures/full.png')} alt='hole' />
+              <p>{index + 1}</p>
+            </li>)}
         </ul>
         <div className='RabbidButt'>
           <img src={require('../pictures/butt.png')} alt='Rabbid butt' />
