@@ -4,7 +4,7 @@ import Button from './Button'
 
 import './CommentBox.css'
 
-const CommentBox = ({ lang, comment, dice, name, p1Turn, setComWindow, setP1Turn, turnNb, setTurnNb }) => {
+const CommentBox = ({ lang, comment, dice, name, p1Turn, setWindows, setP1Turn, turnNb, setTurnNb }) => {
 
   const [visible, setVisible] = useState(true)
   const [replay, setReplay] = useState(false)
@@ -12,13 +12,13 @@ const CommentBox = ({ lang, comment, dice, name, p1Turn, setComWindow, setP1Turn
 
   const playAgain = () => {
     setTurnNb(turnNb + 1)
-    setComWindow(false)
+    setWindows(prevValues => ({prevValues, comment: false}))
   }
 
   const changeTurn = () => {
     setTurnNb(1)
     setP1Turn(!p1Turn)
-    setComWindow(false)
+    setWindows(prevValues => ({prevValues, comment: false}))
   }
 
   useEffect(() => {

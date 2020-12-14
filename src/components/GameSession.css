@@ -10,6 +10,13 @@
   box-shadow: 0px 2px 2px 1px rgb(15, 10, 0);
 }
 
+.GameSession h1 {
+  text-align: center;
+  font-family: 'Rabbids', 'cursive';
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
 .GameSessionPreview {
   display: flex;
   justify-content: center;
