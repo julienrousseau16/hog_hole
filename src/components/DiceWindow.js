@@ -7,7 +7,7 @@ const DiceWindow = ({ lang, name }) => {
   const [dice, setDice] = useState(false)
 
   useEffect(() => {
-    setTimeout(() => setDice(true), 2000);
+    setTimeout(() => setDice(true), 1500);
   }, [])
 
   return (

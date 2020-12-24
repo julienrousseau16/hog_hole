@@ -23,10 +23,10 @@ const GameSession = ({ lang }) => {
   const [params, setParams] = useState({ dice: 0, turnP1: true, turnNb: 1 })
   const [windows, setWindows] = useState({ dice: false, comment: false, victory: false })
 
-  // const player1 = useLocation().players.player1
-  // const player2 = useLocation().players.player2
-  const player1 = 'Gradubbid'
-  const player2 = 'jack'
+  const player1 = useLocation().players.player1
+  const player2 = useLocation().players.player2
+  // const player1 = 'Gradubbid'
+  // const player2 = 'jack'
 
   const diceRoll = () => {
     const random = Math.floor(Math.random() * (7 - 1) + 1)
@@ -35,8 +35,8 @@ const GameSession = ({ lang }) => {
       setWindows(prevValues => ({ ...prevValues, dice: false }))
       setParams(prevValues => ({ ...prevValues, dice: random }))
       diceResult(random)
-    }, 4000);
-    setTimeout(() => setWindows(prevValues => ({ ...prevValues, comment: true })), 4050);
+    }, 3000);
+    setTimeout(() => setWindows(prevValues => ({ ...prevValues, comment: true })), 3050);
   }
 
   const diceResult = dice => {
