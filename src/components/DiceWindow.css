@@ -190,3 +190,13 @@
 }
 
 
+@media screen and (min-width: 769px) {
+  .DiceWindowContent {
+    padding: 2%;
+    width: 50%;
+    max-width: 800px;
+  }
+  .DiceWindow img {
+    width: 70%;
+  }
+}

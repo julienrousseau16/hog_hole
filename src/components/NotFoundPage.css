@@ -29,3 +29,17 @@
   font-family: 'Rabbids', 'cursive';
   font-size: 22px;
 }
+
+@media screen and (min-width: 450px) {
+  .NotFoundPage {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .NotFoundPage {
+    padding: 2%;
+    width: 50%;
+    max-width: 500px;
+  }
+}

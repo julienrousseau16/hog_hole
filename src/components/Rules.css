@@ -35,3 +35,12 @@
   color: rgb(230, 171, 182);
   font-size: 17px;
 }
+
+@media screen and (min-width: 769px) {
+  .Rules {
+    padding: 2%;
+    width: 40%;
+    height: auto;
+    overflow: unset;
+  }
+}

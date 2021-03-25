@@ -104,3 +104,24 @@
 .GameSession #blue {
   margin-top: 10px;
 }
+
+@media screen and (min-width: 450px) {
+  .GameSession {
+    padding: 5%;
+    width: 50%;
+  }
+  .players_container {
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .GameSession {
+    padding: 2%;
+    width: 40%;
+    max-width: 800px;
+  }
+  .players_container {
+    align-items: center;
+  }
+}

@@ -39,7 +39,7 @@
   width: 80%;
   margin-bottom: 15px;
   padding-left: 10px;
-  background-color:rgb(40, 100, 139);
+  background-color: rgb(40, 100, 139);
   border: none;
   border-radius: 5px;
   box-shadow: 0px 2px 2px 1px rgb(52, 81, 99);
@@ -50,4 +50,11 @@
 
 .Settings #validate {
   margin: 20px 0;
+}
+
+@media screen and (min-width: 769px) {
+  .Settings {
+    padding: 2%;
+    width: 40%;
+  }
 }
